@@ -1,0 +1,9 @@
+{
+  "name": "helloactionablemessages",
+  "version": "1.0.0",
+  "description": "Actionable Message Sample",
+  "scripts": {
+    "code": "func host start --debug vscode"
+  },
+  "license": "MIT"
+}
