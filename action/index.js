@@ -1,17 +1,20 @@
+var processor = require('./ActionProcessor');
+
 module.exports = function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
-    if (req.query.name || (req.body && req.body.name)) {
-        context.res = {
-            // status: 200, /* Defaults to 200 */
-            body: "Hello " + (req.query.name || req.body.name)
-        };
+    if (req.body) {
+
+        processor.ActionProcessor.process(req.headers, req.body, function(res){
+            context.res = res;
+            context.done();
+        }, context.log)
     }
     else {
         context.res = {
             status: 400,
-            body: "Please pass a name on the query string or in the request body"
+            body: "Invalid request"
         };
+        context.done();
     }
-    context.done();
 };
