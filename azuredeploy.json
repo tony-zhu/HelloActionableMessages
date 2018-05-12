@@ -19,6 +19,12 @@
             "metadata": {
                 "description": "Storage Account type"
             }
+        },
+        "repoUrl": {
+            "type": "string"
+        },
+        "branch": {
+            "type": "string"
         }
     },
     "variables": {
@@ -99,8 +105,8 @@
                       "[resourceId('Microsoft.Web/sites/', parameters('appName'))]"
                     ],
                     "properties": {
-                      "RepoUrl": "[parameters('sourceCodeRepositoryURL')]",
-                      "branch": "[parameters('sourceCodeBranch')]",
+                      "RepoUrl": "[parameters('repoUrl')]",
+                      "branch": "[parameters('branch')]",
                       "IsManualIntegration": "[parameters('sourceCodeManualIntegration')]"
                     }
                 }
