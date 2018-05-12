@@ -6,7 +6,6 @@
     "code": "func host start --debug vscode"
   },
   "dependencies": {
-    "express": "3.x",
     "jsonwebtoken": "7.x",
     "request": "2.x",
     "rsa-pem-from-mod-exp": "^0.8.4",
