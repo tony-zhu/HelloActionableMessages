@@ -8,6 +8,9 @@
                 "description": "The name of the function app that you wish to create."
             }
         },
+        "hostingPlanName": {
+            "type": "string"
+        },
         "storageAccountType": {
             "type": "string",
             "defaultValue": "Standard_LRS",
@@ -29,7 +32,7 @@
     },
     "variables": {
         "functionAppName": "[parameters('appName')]",
-        "hostingPlanName": "[parameters('appName')]",
+        "hostingPlanName": "[parameters('hostingPlanName')]",
         "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'azfunctions')]",
         "storageAccountid": "[concat(resourceGroup().id,'/providers/','Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]"
     },
